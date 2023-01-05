@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [(Path(BASE_DIR / 'static'))]
+STATICFILES_DIRS = [(Path(BASE_DIR / 'templates' / 'static'))]
 MEDIA_ROOT = Path(BASE_DIR / 'media')
 MEDIA_URL = '/media/'
 
@@ -131,6 +132,7 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Messages
 from django.contrib.messages import constants
@@ -144,3 +146,4 @@ MESSAGE_TAGS = {
 }
 
 INSTALLED_APPS += ('django_summernote',)
+ 
