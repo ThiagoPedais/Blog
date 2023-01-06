@@ -5,11 +5,11 @@ from django.utils import timezone
 
 # Create your models here.
 class Comment(models.Model):
-    name_comment = models.CharField(max_length=150)
-    email_comment = models.EmailField()
-    comment = models.TextField()
+    name_comment = models.CharField(max_length=150, verbose_name='Nome')
+    email_comment = models.EmailField(verbose_name='E-mail')
+    comment = models.TextField(verbose_name='Comentário')
     post_comment = models.ForeignKey(Post, on_delete=models.CASCADE)
-    user_comment = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user_comment = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
     date_comment = models.DateTimeField(default=timezone.now)
     published_comment = models.BooleanField(default=False)
 
